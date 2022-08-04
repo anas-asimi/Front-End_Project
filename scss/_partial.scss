@@ -1,62 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap");
 
 @function torem($number) {
-    $result : calc($number / 16) + rem;
-    @return $result;
+  $result: calc($number / 16) + rem;
+  @return $result;
 }
 
-@mixin flex ($justify,$align,$direction:row){
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
+@mixin flex($justify, $align, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
 
-$color-1:#161616;
-$color-2 :#202020;
-$color-3:#2e2e2e;
-$color-4:#444444;
-$color-red:#f50d32;
-$color-white:#ffffff;
-
+$color-1: #161616;
+$color-2: #202020;
+$color-3: #2e2e2e;
+$color-4: #444444;
+$color-red: #f50d32;
+$color-white: #ffffff;
 
 // start container
 .container {
-    width: 80%;
-    max-width: 1000px;
+  box-sizing: border-box !important;
+  overflow: hidden;
+  width: 80%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  &:not(:first-child) {
+    margin-top: 64px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: calc(100% - 32px);
     margin-left: auto;
     margin-right: auto;
-    &:not(:first-child) {
-      margin-top: 64px;
-    }
-  
-    @media screen and (max-width: 767px) {
-      width: calc(100% - 32px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
-  // end container
-  // start title
-  .title {
-    @include flex(space-between, center, column);
-    max-width: 500px;
-    text-align: center;
-    gap: 16px;
-    h1 {
-      margin: 0;
-    }
-    .line {
-      height: 2px;
-      width: 100px;
-      background-color: $color-red;
-    }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  // end title
-  
+}
+// end container
+// start title
+.title {
+  @include flex(space-between, center, column);
+  max-width: 500px;
+  text-align: center;
+  gap: 16px;
+  h1 {
+    margin: 0;
+  }
+  .line {
+    height: 2px;
+    width: 100px;
+    background-color: $color-red;
+  }
+}
+// end title

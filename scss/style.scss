@@ -7,10 +7,17 @@
   text-decoration: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  text-size-adjust: none;
   // border: 1px white solid;
 }
+html {
+  overflow-x: hidden;
+}
 body {
+  overflow-x: hidden;
+  position: relative;
+
   background-color: $color-2;
   color: $color-white;
   font-family: "Montserrat", sans-serif;
@@ -259,16 +266,19 @@ header {
 }
 .testimonials {
   @include flex(center, center, column);
-  gap: 64px;
+  gap: 32px;
   margin-bottom: 64px;
 
   .testimonials-items {
-    @include flex(space-between, center, row);
+    @include flex(center, center, row);
     width: 100%;
     gap: 16px;
+    flex-wrap: wrap;
 
     .testimonials-item {
       flex: 1;
+      min-width: 220px;
+      max-width: 300px;
       @include flex(space-evenly, center, column);
       padding: 32px;
       background-color: $color-3;
@@ -317,7 +327,9 @@ header {
       margin: 0;
     }
     a {
-      padding: 16px 24px;
+      min-width: 120px;
+      text-align: center;
+      padding: 16px 0px;
       background-color: $color-red;
       border: $color-red 1px solid;
       border-radius: 8px;
@@ -357,11 +369,18 @@ footer {
 
 // responsive codes
 @media screen and (max-width: 767px) {
+  body{
+    font-size: 15px;
+  }
   header {
     span {
     }
     ul {
       li {
+        margin-left: 0;
+        &:not(:first-child){
+          margin-left: 8px;
+        }
         a {
           &:hover {
           }
@@ -454,12 +473,12 @@ footer {
         }
       }
       img {
+        height: 280px;
       }
     }
   }
   .testimonials {
     .testimonials-items {
-      @include flex(space-between, center, row);
       .testimonials-item {
         i {
         }
@@ -476,6 +495,7 @@ footer {
       }
     }
     .contact-me {
+      padding: 32px;;
       h1 {
       }
       a {
