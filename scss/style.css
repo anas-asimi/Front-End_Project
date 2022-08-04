@@ -11,14 +11,14 @@
 }
 @media screen and (max-width: 767px) {
   .container {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .container {
-    width: 700px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -213,6 +213,8 @@ header ul li a:hover {
   flex-direction: row;
   width: 100%;
   gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .pricing .pricing-items .pricing-item {
   display: flex;
@@ -220,6 +222,8 @@ header ul li a:hover {
   align-items: center;
   flex-direction: column;
   flex: 1;
+  min-width: 300px;
+  max-width: 300px;
   height: 440px;
   padding: 32px;
   border: 2px solid #2e2e2e;
@@ -448,4 +452,45 @@ footer .social i {
   border-radius: 50%;
   color: #ffffff;
   font-size: large;
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    flex-direction: column;
+  }
+  .home .text {
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+  }
+  .home img {
+    margin-top: 8px;
+    height: 240px;
+  }
+  .pricing .pricing-items {
+    padding: 16px;
+  }
+  .testimonials .testimonials-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .home img {
+    height: 300px;
+  }
+  .selected-works .content img {
+    height: 280px;
+  }
+  .testimonials .testimonials-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=style.css.map */

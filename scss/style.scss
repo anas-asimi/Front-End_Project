@@ -149,10 +149,15 @@ header {
     @include flex(space-between, center, row);
     width: 100%;
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 
     .pricing-item {
       @include flex(space-between, center, column);
       flex: 1;
+      min-width: 300px;
+      max-width: 300px;
       height: 440px;
       padding: 32px;
       border: 2px solid $color-3;
@@ -271,31 +276,31 @@ header {
       gap: 16px;
       text-align: center;
 
-      i{
+      i {
         font-size: 48px;
         color: $color-red;
       }
-      p{
+      p {
         font-size: smaller;
         font-weight: 500;
         font-style: italic;
         letter-spacing: 1px;
         line-height: 18px;
       }
-      span{
+      span {
         height: 2px;
         width: 60px;
         background-color: $color-red;
       }
-      img{
+      img {
         height: 100px;
         width: 100px;
         border-radius: 50%;
       }
-      h3{
+      h3 {
         font-size: medium;
       }
-      h4{
+      h4 {
         font-size: small;
         font-weight: 400;
       }
@@ -348,4 +353,271 @@ footer {
       font-size: large;
     }
   }
+}
+
+// responsive codes
+@media screen and (max-width: 767px) {
+  header {
+    span {
+    }
+    ul {
+      li {
+        a {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+  .home {
+    height: max-content;
+    flex-direction: column;
+    .text {
+      gap: 8px;
+      text-align: center;
+      align-items: center;
+      h1 {
+      }
+      h2 {
+      }
+      p {
+      }
+      a {
+        &:hover {
+        }
+      }
+    }
+    img {
+      margin-top: 8px;
+      height: 240px;
+    }
+  }
+  .services {
+    .grid {
+      .item-1 {
+      }
+      .item-2 {
+      }
+      .item-3 {
+      }
+      .item-4 {
+      }
+      .grid-items {
+        .icon {
+        }
+        a:last-child {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+  .pricing {
+    .pricing-items {
+      padding: 16px;
+      .pricing-item {
+        &-active {
+          > a {
+          }
+        }
+        h2 {
+        }
+        > i {
+        }
+        h1 {
+        }
+        div {
+          i {
+          }
+          p {
+          }
+        }
+        a {
+        }
+      }
+    }
+  }
+  .selected-works {
+    .content {
+      &:last-child {
+        .text {
+        }
+      }
+      .text {
+        h2 {
+        }
+        p {
+        }
+        a:last-child {
+          &:hover {
+          }
+        }
+      }
+      img {
+      }
+    }
+  }
+  .testimonials {
+    .testimonials-items {
+      @include flex(space-between, center, row);
+      .testimonials-item {
+        i {
+        }
+        p {
+        }
+        span {
+        }
+        img {
+        }
+        h3 {
+        }
+        h4 {
+        }
+      }
+    }
+    .contact-me {
+      h1 {
+      }
+      a {
+        &:hover {
+        }
+      }
+    }
+  }
+  footer {
+    .social {
+      i {
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header {
+    span {
+    }
+    ul {
+      li {
+        a {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+  .home {
+    .text {
+      h1 {
+      }
+      h2 {
+      }
+      p {
+      }
+      a {
+        &:hover {
+        }
+      }
+    }
+    img {
+      height: 300px;
+    }
+  }
+  .services {
+    .grid {
+      .item-1 {
+      }
+      .item-2 {
+      }
+      .item-3 {
+      }
+      .item-4 {
+      }
+      .grid-items {
+        .icon {
+        }
+        a:last-child {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+  .pricing {
+    .pricing-items {
+      .pricing-item {
+        &-active {
+          > a {
+          }
+        }
+        h2 {
+        }
+        > i {
+        }
+        h1 {
+        }
+        div {
+          i {
+          }
+          p {
+          }
+        }
+        a {
+        }
+      }
+    }
+  }
+  .selected-works {
+    .content {
+      &:last-child {
+        .text {
+        }
+      }
+      .text {
+        h2 {
+        }
+        p {
+        }
+        a:last-child {
+          &:hover {
+          }
+        }
+      }
+      img {
+        height: 280px;
+      }
+    }
+  }
+  .testimonials {
+    .testimonials-items {
+      @include flex(space-between, center, row);
+      .testimonials-item {
+        i {
+        }
+        p {
+        }
+        span {
+        }
+        img {
+        }
+        h3 {
+        }
+        h4 {
+        }
+      }
+    }
+    .contact-me {
+      h1 {
+      }
+      a {
+        &:hover {
+        }
+      }
+    }
+  }
+  footer {
+    .social {
+      i {
+      }
+    }
+  }
+
 }
